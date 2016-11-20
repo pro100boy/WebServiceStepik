@@ -60,4 +60,3 @@ public class AllRequestsServlet extends HttpServlet {
         return pageVariables;
     }
 }
-

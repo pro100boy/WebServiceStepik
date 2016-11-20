@@ -41,7 +41,6 @@ public class PageGenerator {
     }
 
     private PageGenerator() {
-        cfg = new Configuration(Configuration.VERSION_2_3_23);
+        cfg = new Configuration(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
     }
 }
-
