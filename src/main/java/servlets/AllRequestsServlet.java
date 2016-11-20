@@ -22,13 +22,13 @@ public class AllRequestsServlet extends HttpServlet {
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response) throws ServletException, IOException {
 
-        Map<String, Object> pageVariables = new HashMap<>();
+        /*Map<String, Object> pageVariables = new HashMap<>();
         pageVariables.put("val", "");
 
         if (request.getParameterMap().containsKey("key"))
-            pageVariables.put("val", request.getParameterMap().get("key")[0]);
+            pageVariables.put("val", request.getParameterMap().get("key")[0]);*/
 
-        response.getWriter().println(PageGenerator.instance().getPage("hw0.html", pageVariables));
+        response.getWriter().println(request.getParameter("key"));
 
         response.setContentType("text/html;charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
