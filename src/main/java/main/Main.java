@@ -11,18 +11,25 @@ import servlets.AllRequestsServlet;
  *         Пример кода для курса на https://stepic.org/
  *         <p>
  *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
+ *
+ *         Задача:
+Написать сервлет, который будет обрабатывать запросы на /mirror
+При получении GET запроса с параметром key=value сервлет должен вернуть в response строку содержащую value.
+Например, при GET запросе /mirror?key=hello сервер должен вернуть страницу, на которой есть слово "hello".
+
  */
 public class Main {
     public static void main(String[] args) throws Exception {
         AllRequestsServlet allRequestsServlet = new AllRequestsServlet();
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.addServlet(new ServletHolder(allRequestsServlet), "/*");
+        context.addServlet(new ServletHolder(allRequestsServlet), "/mirror");
 
         Server server = new Server(8080);
         server.setHandler(context);
 
         server.start();
+        System.out.println("Server started");
         server.join();
     }
 }
