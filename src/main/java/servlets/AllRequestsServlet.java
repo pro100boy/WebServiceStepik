@@ -1,14 +1,10 @@
 package servlets;
 
-import templater.PageGenerator;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author v.chibrikov
@@ -21,12 +17,6 @@ public class AllRequestsServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response) throws ServletException, IOException {
-
-        /*Map<String, Object> pageVariables = new HashMap<>();
-        pageVariables.put("val", "");
-
-        if (request.getParameterMap().containsKey("key"))
-            pageVariables.put("val", request.getParameterMap().get("key")[0]);*/
 
         response.getWriter().println(request.getParameter("key"));
 
